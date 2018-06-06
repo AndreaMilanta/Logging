@@ -1,5 +1,7 @@
 ﻿using System;
 
+using Logging.Exceptions;
+
 namespace Logging
 {
     public abstract class Loggable
@@ -8,7 +10,7 @@ namespace Logging
 
         public Loggable(string logger)
         {
-            this._logger = logger;
+            this._logger = logger.ToLower();
             LoggerManager.Instance.RegisterLogger(this._logger);
         }
 
@@ -22,9 +24,9 @@ namespace Logging
             {
                 LoggerManager.Instance.Log(_logger, logEvent);
             }
-            catch 
+            catch (Exception e)
             {
-                LoggerManager.Instance.LoggingError(_logger, logEvent);
+                LoggerManager.Instance.LoggingError(_logger, logEvent, e);
             }
         }
 
@@ -38,9 +40,9 @@ namespace Logging
             {
                 LoggerManager.Instance.LogError(_logger, logEvent);
             }
-            catch 
+            catch (Exception e)
             {
-                LoggerManager.Instance.LoggingError(_logger, logEvent);
+                LoggerManager.Instance.LoggingError(_logger, logEvent, e);
             }
         }
 
@@ -54,9 +56,9 @@ namespace Logging
             {
                 LoggerManager.Instance.LogException(_logger, logExc);
             }
-            catch 
+            catch (Exception e)
             {
-                LoggerManager.Instance.LoggingError(_logger, logExc.ToString());
+                LoggerManager.Instance.LoggingError(_logger, logExc.ToString(), e);
             }
         }
     }
