@@ -34,7 +34,7 @@ namespace Logging
         /// Log Error Event
         /// </summary>
         /// <param name="logEvent"></param>
-        protected void LogException(string logEvent)
+        protected void LogError(string logEvent)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace Logging
         /// Log Exception
         /// </summary>
         /// <param name="logEvent"></param>
-        protected void LogError(Exception logExc)
+        protected void LogException(Exception logExc)
         {
             try
             {
