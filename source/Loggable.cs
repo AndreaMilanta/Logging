@@ -8,7 +8,7 @@ namespace Logging
     {
         private string _logger;
 
-        public Loggable(string logger)
+        protected Loggable(string logger)
         {
             this._logger = logger.ToLower();
             LoggerManager.Instance.RegisterLogger(this._logger);
