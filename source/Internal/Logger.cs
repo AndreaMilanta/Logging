@@ -51,6 +51,7 @@ namespace Logging.Internal
             lock (this._content)
             {
                 _sw.Write(_content.ToString());
+                _sw.FlushAsync();
                 _content.Clear();
             }
         }
