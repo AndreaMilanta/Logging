@@ -16,7 +16,7 @@ namespace Logging
 
         public const string LOGGERLOG = "LoggerLog";
 
-        public const int TIMER_DT_s = 1;   //Number of seconds between writes to file
+        public const int TIMER_DT_s = 10;   //Number of seconds between writes to file
         public const bool TO_CONSOLE = true;
     }
 }
