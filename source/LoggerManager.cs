@@ -22,7 +22,7 @@ namespace Logging
         public bool ToConsole { get; private set; }
         public bool Enabled { get; private set; }
         public List<string> Logs { get => logDict.Keys.ToList(); }
-        public static LoggerManager Instance { get => _instance == null ? throw new LogManagerAlreadyInitiliazedException() : _instance; }
+        public static LoggerManager Instance { get => _instance == null ? throw new LogManagerNotInitiliazedException() : _instance; }
 
         private Timer timer;
 
