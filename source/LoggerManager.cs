@@ -56,8 +56,8 @@ namespace Logging
             this.logDict = new Dictionary<string, Logger>();
 
             //Init LoggerLog
-            string loggerLogPath = FolderPath + DateTime.Now.ToString(LogConstants.NAME_FORMAT) + LogConstants.NAME_DIVIDER + LogConstants.LOGGERLOG;
-            this.logDict.Add(LogConstants.LOGGERLOG, new Logger(loggerLogPath, DateFormat));
+            //string loggerLogPath = FolderPath + DateTime.Now.ToString(LogConstants.NAME_FORMAT) + LogConstants.NAME_DIVIDER + LogConstants.LOGGERLOG;
+            //this.logDict.Add(LogConstants.LOGGERLOG, new Logger(loggerLogPath, DateFormat));
 
             //Start Timer
             timer = new Timer(dt * 1000);
