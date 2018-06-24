@@ -29,7 +29,7 @@ namespace Logging.Internal
         {
             string logEntry = DateTime.Now.ToString(_dateFormat) + LogConstants.DIVIDER + logEvent;
             lock (this._content)
-                _content.AppendLine(logEvent);
+                _content.AppendLine(logEntry);
         }
 
         /// <summary>
